@@ -1,0 +1,14 @@
+{
+    "openFiles": [
+    ],
+    "openTab": -1,
+    "projectFiles": [
+        "coloracao_mapa.mzn",
+        "dificil.dzn",
+        "facil.dzn",
+        "media.dzn"
+    ],
+    "selectedBuiltinConfigId": "org.gecode.gecode",
+    "selectedBuiltinConfigVersion": "6.3.0",
+    "version": 106
+}

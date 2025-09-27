@@ -1,0 +1,9 @@
+n = 5;
+m = 5;
+
+regiao1 = [1, 1, 2, 3, 4];
+regiao2 = [2, 5, 3, 4, 5];
+
+% Cores que a região não deve assumir
+%             1   2   3   4    5
+restricoes = [{}, {}, {}, {}, {}];
