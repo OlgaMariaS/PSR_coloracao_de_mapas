@@ -1,4 +1,4 @@
-package csp;
+package psr;
 
 public class Main {
 
@@ -17,7 +17,7 @@ public class Main {
                 System.out.println("   - Variáveis: " + inst.variaveis);
                 System.out.println("   - Vizinhos: " + inst.vizinhos + "\n");
 
-                csp.MapColoringSolver.Result r = csp.MapColoringSolver.solve(inst);
+                psr.MapColoringSolver.Result r = psr.MapColoringSolver.solve(inst);
 
                 System.out.println("--- Resultados ---");
                 if (r.atribuicaoDeCores != null) {

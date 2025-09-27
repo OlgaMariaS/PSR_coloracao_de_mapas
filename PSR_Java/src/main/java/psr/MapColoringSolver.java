@@ -1,4 +1,4 @@
-package csp;
+package psr;
 
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solution;
