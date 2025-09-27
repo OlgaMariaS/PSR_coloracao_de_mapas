@@ -3,8 +3,8 @@ package psr;
 public class Main {
 
     public static void main(String[] args) {
-        String[] nomes  = {"Fácil", "Média", "Difícil", "Muito difícil"};
-        String[] paths  = {"instancia_facil.json", "instancia_media.json", "instancia_dificil.json", "instancia_muito_dificil.json"};
+        String[] nomes  = {"Fácil", "Média", "Difícil", "Sem solução", "Mapa do Brasil"};
+        String[] paths  = {"instancia_facil.json", "instancia_media.json",  "instancia_dificil.json", "instancia_sem_solucao.json", "instancia_brasil.json",};
 
         for (int i = 0; i < paths.length; i++) {
             System.out.println("==========================================");
@@ -20,10 +20,16 @@ public class Main {
                 psr.MapColoringSolver.Result r = psr.MapColoringSolver.solve(inst);
 
                 System.out.println("--- Resultados ---");
-                if (r.atribuicaoDeCores != null) {
-                    System.out.println("Solução encontrada:");
-                    r.atribuicaoDeCores.keySet().stream().sorted()
-                            .forEach(v -> System.out.println("   " + v + ": " + r.atribuicaoDeCores.get(v)));
+                if (r.solucoes != null && !r.solucoes.isEmpty()) {
+                    System.out.println("Total de soluções: " + r.solucoes.size());
+                    int k = 1;
+                    for (java.util.Map<String, String> sol : r.solucoes) {
+                        System.out.println("Solução #" + k + ":");
+                        sol.keySet().stream().sorted()
+                                .forEach(v -> System.out.println("   " + v + ": " + sol.get(v)));
+                        k++;
+                        System.out.println();
+                    }
                 } else {
                     System.out.println("Nenhuma solução encontrada.");
                 }
