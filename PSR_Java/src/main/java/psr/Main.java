@@ -7,7 +7,7 @@ public class Main {
         String[] paths  = {"instancia_facil.json", "instancia_media.json", "instancia_dificil.json", "instancia_muito_dificil.json"};
 
         for (int i = 0; i < paths.length; i++) {
-            System.out.println("\n ==========================================");
+            System.out.println("==========================================");
             System.out.println("Executando instância: " + nomes[i]);
             System.out.println("==========================================");
 
