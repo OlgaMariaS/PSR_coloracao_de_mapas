@@ -1,7 +1,7 @@
 % Algoritmo para o problema de coloração de mapas
 
 % Dominio das variáveis
-enum Cores = {Vermelho, Verde, Azul};
+enum Cores = {Vermelho, Verde, Azul}; % Adicionar amarelo para instancias maiores
 
 % Número de variáveis
 int: n;
@@ -30,7 +30,7 @@ constraint
     not (cor[i] in restricoes[i])
   );
 
-solve satisfy;
+solve :: int_search(cor, first_fail, indomain_min, complete) satisfy;
 
 output [ "V" ++ show(i) ++ ": " ++ show(cor[i]) ++ "\n" | i in V ];
 

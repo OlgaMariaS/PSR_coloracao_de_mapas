@@ -1,12 +1,16 @@
 {
     "openFiles": [
+        "coloracao_mapa.mzn",
+        "hardcore.dzn"
     ],
-    "openTab": -1,
+    "openTab": 0,
     "projectFiles": [
         "coloracao_mapa.mzn",
         "dificil.dzn",
         "facil.dzn",
-        "media.dzn"
+        "hardcore.dzn",
+        "media.dzn",
+        "sem_solucao.dzn"
     ],
     "selectedBuiltinConfigId": "org.gecode.gecode",
     "selectedBuiltinConfigVersion": "6.3.0",
