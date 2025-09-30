@@ -8,10 +8,11 @@ INSTANCIAS = {
     "Fácil": "instancias/instancia_facil.json",
     "Média": "instancias/instancia_media.json",
     "Difícil": "instancias/instancia_dificil.json",
-    "T3st3 do Gabriel boraaa": "instancias/instancia_teste.json"
+    "Muito Difícil": "instancias/instancia_muito_dificil.json",
+    "Instancia Parâmetro": "instancias/instancia_parametro.json"
 }
 
-def resolver_mapa_com_mrv(variaveis, dominios, vizinhos):
+def resolver_mapa_com_mrv(variaveis, dominios, vizinhos, restricoes_extras):
     """
     Resolve o problema de coloração de mapa usando backtracking com a heurística MRV.
 
@@ -31,6 +32,27 @@ def resolver_mapa_com_mrv(variaveis, dominios, vizinhos):
             # Adiciona a restrição apenas uma vez para cada par (ex: V1-V2 e não V2-V1)
             if regiao < vizinho:
                 problema.addConstraint(lambda cor1, cor2: cor1 != cor2, (regiao, vizinho))
+
+    # --- ESSE BLOCO É PARA AS RESTRIÇÕES EXTRAS ---
+    for restricao in restricoes_extras:
+        if restricao["tipo"] =="cardinalidade_max":
+            params = restricao["parametros"]
+            cor_restringida = params["cor"]
+            maximo = params["maximo"]
+
+            # Criamos uma INSTÂNCIA da nossa nova classe de restrição
+            constraint_obj = MaxCardinalityConstraint(cor_restringida, maximo)
+
+            # Adiciona a restrição ao problema, aplicando-a a TODAS as variáveis
+            problema.addConstraint(constraint_obj, variaveis)
+        elif restricao["tipo"] =="cardinalidade_min":
+            params = restricao["parametros"]
+            cor_restringida = params["cor"]
+            minimo = params["minimo"]
+            constraint_obj = MinCardinalityConstraint(cor_restringida, minimo)
+            problema.addConstraint(constraint_obj, variaveis)
+
+    # --- FIM DO NOVO BLOCO ---
 
     # 4. Medição do tempo e execução da busca pela solução
     tempo_inicio = time.time()
@@ -57,13 +79,14 @@ def executar():
         print(f"📌 ==========================================")
 
         try:
-            variaveis, dominios, vizinhos, _ = carregar_instancia(caminho)
+            variaveis, dominios, vizinhos, restricoes = carregar_instancia(caminho)
 
-            print(f"   - Variáveis: {variaveis}")
+            print(f"   - Variáveis: {len(variaveis)}")
             print(f"   - Vizinhos: {vizinhos}\n")
+            print(f"   - Restrições Extras: {restricoes}\n")
 
             # Nota: a variável de tempo foi renomeada para tempo_ms para clareza
-            solucao, tempo_ms, falhas = resolver_mapa_com_mrv(variaveis, dominios, vizinhos)
+            solucao, tempo_ms, falhas = resolver_mapa_com_mrv(variaveis, dominios, vizinhos, restricoes)
 
             print("--- Resultados ---")
             if solucao:
