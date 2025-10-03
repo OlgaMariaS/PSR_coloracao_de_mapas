@@ -95,7 +95,6 @@ def executar():
                 for var in sorted(solucao.keys()):
                     print(f"   {var}: {solucao[var]}")
 
-                # --- LINHAS QUE FALTAVAM NO SEU CÓDIGO ---
                 # Chama a função para criar e salvar a imagem do grafo
                 nome_arquivo_mapa = gerar_visualizacao_mapa(vizinhos, solucao, nome)
                 print(f"🖼️  Visualização do mapa salva em: '{nome_arquivo_mapa}'")
@@ -115,3 +114,4 @@ def executar():
 
 if __name__ == "__main__":
     executar()
+
