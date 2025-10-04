@@ -1,0 +1,91 @@
+{
+  "variaveis": [
+    "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10",
+    "V11", "V12", "V13", "V14", "V15", "V16", "V17", "V18", "V19", "V20",
+    "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28", "V29", "V30",
+    "V31", "V32", "V33", "V34", "V35", "V36", "V37", "V38", "V39", "V40",
+    "V41", "V42", "V43", "V44", "V45", "V46", "V47", "V48", "V49", "V50",
+    "V51", "V52", "V53", "V54", "V55", "V56", "V57", "V58", "V59", "V60",
+    "V61", "V62", "V63", "V64", "V65", "V66", "V67", "V68", "V69", "V70",
+    "V71", "V72", "V73", "V74", "V75", "V76", "V77", "V78", "V79", "V80",
+    "V81", "V82", "V83", "V84", "V85", "V86", "V87", "V88", "V89", "V90"
+  ],
+  "dominios": {
+    "V1": ["vermelho","verde","azul","amarelo"], "V2": ["vermelho","verde","azul","amarelo"], "V3": ["vermelho","verde","azul","amarelo"],
+    "V4": ["vermelho","verde","azul","amarelo"], "V5": ["vermelho","verde","azul","amarelo"], "V6": ["vermelho","verde","azul","amarelo"],
+    "V7": ["verde","azul","amarelo"], "V8": ["vermelho","verde","azul","amarelo"], "V9": ["vermelho","verde","azul","amarelo"],
+    "V10": ["vermelho","verde","azul","amarelo"], "V11": ["vermelho","verde","azul","amarelo"], "V12": ["vermelho","verde","azul","amarelo"],
+    "V13": ["vermelho","verde","azul","amarelo"], "V14": ["vermelho","verde","azul","amarelo"], "V15": ["vermelho","verde","azul","amarelo"],
+    "V16": ["vermelho","verde","azul","amarelo"], "V17": ["vermelho","verde","azul","amarelo"], "V18": ["vermelho","verde","azul","amarelo"],
+    "V19": ["vermelho","verde","azul","amarelo"], "V20": ["vermelho","verde","azul","amarelo"], "V21": ["vermelho","verde","azul","amarelo"],
+    "V22": ["vermelho","verde","azul","amarelo"], "V23": ["vermelho","verde","azul","amarelo"], "V24": ["vermelho","verde","azul","amarelo"],
+    "V25": ["vermelho","verde","azul","amarelo"], "V26": ["vermelho","verde","azul","amarelo"], "V27": ["vermelho","verde","azul","amarelo"],
+    "V28": ["vermelho","verde","azul","amarelo"], "V29": ["vermelho","verde","azul","amarelo"], "V30": ["vermelho","verde","azul","amarelo"],
+    "V31": ["vermelho","verde","azul","amarelo"], "V32": ["vermelho","verde","azul","amarelo"], "V33": ["vermelho","verde","azul","amarelo"],
+    "V34": ["vermelho","verde","azul","amarelo"], "V35": ["vermelho","verde","azul","amarelo"], "V36": ["vermelho","verde","azul","amarelo"],
+    "V37": ["vermelho","verde","azul","amarelo"], "V38": ["vermelho","verde","azul","amarelo"], "V39": ["vermelho","verde","azul","amarelo"],
+    "V40": ["vermelho","verde","azul","amarelo"], "V41": ["vermelho","verde","azul","amarelo"], "V42": ["vermelho","verde","azul"],
+    "V43": ["vermelho","verde","azul","amarelo"], "V44": ["vermelho","verde","azul","amarelo"], "V45": ["vermelho","verde","azul","amarelo"],
+    "V46": ["vermelho","verde","azul","amarelo"], "V47": ["vermelho","verde","azul","amarelo"], "V48": ["vermelho","verde","azul","amarelo"],
+    "V49": ["vermelho","verde","azul","amarelo"], "V50": ["vermelho","verde","azul","amarelo"], "V51": ["vermelho","verde","azul","amarelo"],
+    "V52": ["vermelho","verde","azul","amarelo"], "V53": ["vermelho","verde","azul","amarelo"], "V54": ["vermelho","verde","azul","amarelo"],
+    "V55": ["vermelho","verde","azul","amarelo"], "V56": ["vermelho","verde","azul","amarelo"], "V57": ["vermelho","verde","azul","amarelo"],
+    "V58": ["vermelho","verde","azul","amarelo"], "V59": ["vermelho","verde","azul","amarelo"], "V60": ["vermelho","verde","azul","amarelo"],
+    "V61": ["vermelho","verde","azul","amarelo"], "V62": ["vermelho","verde","azul","amarelo"], "V63": ["vermelho","verde","azul","amarelo"],
+    "V64": ["vermelho","verde","azul","amarelo"], "V65": ["vermelho","verde","azul","amarelo"], "V66": ["vermelho","verde","azul","amarelo"],
+    "V67": ["vermelho","verde","azul","amarelo"], "V68": ["vermelho","verde","azul","amarelo"], "V69": ["vermelho","verde","azul","amarelo"],
+    "V70": ["vermelho","verde","azul","amarelo"], "V71": ["vermelho","verde","azul","amarelo"], "V72": ["vermelho","verde","azul","amarelo"],
+    "V73": ["vermelho","verde","azul","amarelo"], "V74": ["vermelho","verde","azul","amarelo"], "V75": ["vermelho","verde","azul","amarelo"],
+    "V76": ["vermelho","verde","azul","amarelo"], "V77": ["vermelho","verde","azul","amarelo"], "V78": ["vermelho","verde","azul","amarelo"],
+    "V79": ["vermelho","verde","azul","amarelo"], "V80": ["vermelho","verde","azul","amarelo"], "V81": ["vermelho","verde","azul","amarelo"],
+    "V82": ["vermelho","verde","azul","amarelo"], "V83": ["vermelho","verde","azul","amarelo"], "V84": ["vermelho","verde","azul","amarelo"],
+    "V85": ["vermelho","verde","azul","amarelo"], "V86": ["vermelho","verde","azul","amarelo"], "V87": ["vermelho","verde","azul","amarelo"],
+    "V88": ["vermelho","verde","amarelo"], "V89": ["vermelho","verde","azul","amarelo"], "V90": ["vermelho","verde","azul","amarelo"]
+  },
+  "vizinhos": {
+    "V1":["V2","V23","V45","V67","V89"], "V2":["V1","V3","V24","V46","V68"], "V3":["V2","V4","V25","V47","V69"],
+    "V4":["V3","V5","V26","V48","V70"], "V5":["V4","V6","V27","V49","V71"], "V6":["V5","V7","V28","V50","V72"],
+    "V7":["V6","V8","V29","V51","V73"], "V8":["V7","V9","V30","V52","V74"], "V9":["V8","V10","V31","V53","V75"],
+    "V10":["V9","V11","V32","V54","V76"], "V11":["V10","V12","V33","V55","V77"], "V12":["V11","V13","V34","V56","V78"],
+    "V13":["V12","V14","V35","V57","V79"], "V14":["V13","V15","V36","V58","V80"], "V15":["V14","V16","V37","V59","V81"],
+    "V16":["V15","V17","V38","V60","V82"], "V17":["V16","V18","V39","V61","V83"], "V18":["V17","V19","V40","V62","V84"],
+    "V19":["V18","V20","V41","V63","V85"], "V20":["V19","V21","V42","V64","V86"], "V21":["V20","V22","V43","V65","V87"],
+    "V22":["V21","V23","V44","V66","V88"], "V23":["V22","V1","V45","V67","V89"], "V24":["V2","V25","V46","V68","V90"],
+    "V25":["V3","V24","V26","V47","V69"], "V26":["V4","V25","V27","V48","V70"], "V27":["V5","V26","V28","V49","V71"],
+    "V28":["V6","V27","V29","V50","V72"], "V29":["V7","V28","V30","V51","V73"], "V30":["V8","V29","V31","V52","V74"],
+    "V31":["V9","V30","V32","V53","V75"], "V32":["V10","V31","V33","V54","V76"], "V33":["V11","V32","V34","V55","V77"],
+    "V34":["V12","V33","V35","V56","V78"], "V35":["V13","V34","V36","V57","V79"], "V36":["V14","V35","V37","V58","V80"],
+    "V37":["V15","V36","V38","V59","V81"], "V38":["V16","V37","V39","V60","V82"], "V39":["V17","V38","V40","V61","V83"],
+    "V40":["V18","V39","V41","V62","V84"], "V41":["V19","V40","V42","V63","V85"], "V42":["V20","V41","V43","V64","V86"],
+    "V43":["V21","V42","V44","V65","V87"], "V44":["V22","V43","V45","V66","V88"], "V45":["V23","V1","V44","V46","V67"],
+    "V46":["V24","V2","V45","V47","V68"], "V47":["V25","V3","V46","V48","V69"], "V48":["V26","V4","V47","V49","V70"],
+    "V49":["V27","V5","V48","V50","V71"], "V50":["V28","V6","V49","V51","V72"], "V51":["V29","V7","V50","V52","V73"],
+    "V52":["V30","V8","V51","V53","V74"], "V53":["V31","V9","V52","V54","V75"], "V54":["V32","V10","V53","V55","V76"],
+    "V55":["V33","V11","V54","V56","V77"], "V56":["V34","V12","V55","V57","V78"], "V57":["V35","V13","V56","V58","V79"],
+    "V58":["V36","V14","V57","V59","V80"], "V59":["V37","V15","V58","V60","V81"], "V60":["V38","V16","V59","V61","V82"],
+    "V61":["V39","V17","V60","V62","V83"], "V62":["V40","V18","V61","V63","V84"], "V63":["V41","V19","V62","V64","V85"],
+    "V64":["V42","V20","V63","V65","V86"], "V65":["V43","V21","V64","V66","V87"], "V66":["V44","V22","V65","V67","V88"],
+    "V67":["V45","V23","V1","V66","V68"], "V68":["V46","V24","V2","V67","V69"], "V69":["V47","V25","V3","V68","V70"],
+    "V70":["V48","V26","V4","V69","V71"], "V71":["V49","V27","V5","V70","V72"], "V72":["V50","V28","V6","V71","V73"],
+    "V73":["V51","V29","V7","V72","V74"], "V74":["V52","V30","V8","V73","V75"], "V75":["V53","V31","V9","V74","V76"],
+    "V76":["V54","V32","V10","V75","V77"], "V77":["V55","V33","V11","V76","V78"], "V78":["V56","V34","V12","V77","V79"],
+    "V79":["V57","V35","V13","V78","V80"], "V80":["V58","V36","V14","V79","V81"], "V81":["V59","V37","V15","V80","V82"],
+    "V82":["V60","V38","V16","V81","V83"], "V83":["V61","V39","V17","V82","V84"], "V84":["V62","V40","V18","V83","V85"],
+    "V85":["V63","V41","V19","V84","V86"], "V86":["V64","V42","V20","V85","V87"], "V87":["V65","V43","V21","V86","V88"],
+    "V88":["V66","V44","V22","V87","V89"], "V89":["V67","V45","V23","V1","V88"], "V90":["V68","V46","V24","V2","V88"]
+  },
+  "restricoes_extras": [
+    {
+      "tipo": "cardinalidade_max",
+      "parametros": { "cor": "amarelo", "maximo": 18 }
+    },
+    {
+      "tipo": "cardinalidade_max",
+      "parametros": { "cor": "vermelho", "maximo": 20 }
+    },
+    {
+      "tipo": "cardinalidade_min",
+      "parametros": { "cor": "azul", "minimo": 20 }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "variaveis": ["V1", "V2", "V3", "V4", "V5"],
+  "dominios": {
+    "V1": ["vermelho", "verde", "azul"],
+    "V2": ["vermelho", "verde", "azul"],
+    "V3": ["vermelho", "verde", "azul"],
+    "V4": ["vermelho", "verde", "azul"],
+    "V5": ["vermelho", "verde", "azul"]
+  },
+  "vizinhos": {
+    "V1": ["V2", "V5"],
+    "V2": ["V1", "V3"],
+    "V3": ["V2", "V4"],
+    "V4": ["V3", "V5"],
+    "V5": ["V4", "V1"]
+  },
+  "restricoes_extras": []
+}

@@ -1,7 +1,6 @@
 package psr;
 
 import org.chocosolver.solver.Model;
-import org.chocosolver.solver.Solution;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.search.strategy.selectors.values.IntValueSelector;
 import org.chocosolver.solver.search.strategy.selectors.variables.DomOverWDeg;
@@ -11,17 +10,17 @@ import org.chocosolver.util.iterators.DisposableValueIterator;
 import java.util.*;
 
 /**
-    Solver com seleção de variável Dom/Wdeg e ordenação de valores LCV (Least Constraining Value).
-*/
+ Solver com seleção de variável Dom/Wdeg e ordenação de valores LCV (Least Constraining Value).
+ */
 public class MapColoringSolver {
 
     public static class Result {
-        public final Map<String, String> atribuicaoDeCores; // Região → cor escolhida.
-        public final long tempoExecucaoMs;                  // Tempo de execução em milissegundos.
-        public final long totalFalhas;                      // Número de falhas ocorridas na busca.
+        public final List<Map<String, String>> solucoes; // Lista de atribuições Região → Cor.
+        public final long tempoExecucaoMs;               // Tempo total de execução em milissegundos.
+        public final long totalFalhas;                   // Número de falhas ocorridas na busca.
 
-        public Result(Map<String, String> atribuicaoDeCores, long tempoExecucaoMs, long totalFalhas) {
-            this.atribuicaoDeCores = atribuicaoDeCores;
+        public Result(List<Map<String, String>> solucoes, long tempoExecucaoMs, long totalFalhas) {
+            this.solucoes = solucoes;
             this.tempoExecucaoMs = tempoExecucaoMs;
             this.totalFalhas = totalFalhas;
         }
@@ -31,15 +30,14 @@ public class MapColoringSolver {
         // 1) Modelagem do problema no Choco Solver.
         Model modelo = new Model("MapColoring");
 
-        // Mapeamento: região → variável inteira (valor = índice da cor escolhida).
-        Map<String, IntVar> variaveisPorRegiao = new LinkedHashMap<>();       // Variáveis no solver.
+        // Mapeamento: região -> variável inteira (valor = índice da cor escolhida).
+        Map<String, IntVar> variaveisPorRegiao = new LinkedHashMap<>();             // Variáveis no solver.
         Map<String, List<String>> coresDisponiveisPorRegiao = new LinkedHashMap<>(); // Paleta de cores por região.
 
         // Cria variáveis para cada região com base no domínio de cores permitido.
         for (String regiao : instancia.variaveis) {
             List<String> coresDaRegiao = new ArrayList<>(instancia.dominios.get(regiao));
             int[] dominioInteiros = new int[coresDaRegiao.size()];
-
             for (int i = 0; i < coresDaRegiao.size(); i++) dominioInteiros[i] = i; // Índices 0..n-1.
 
             IntVar variavelRegiao = modelo.intVar(regiao, dominioInteiros);
@@ -77,7 +75,6 @@ public class MapColoringSolver {
         Map<String, Set<String>> vizinhancaSimetrica = new HashMap<>();
         for (String regiao : instancia.vizinhos.keySet()) {
             vizinhancaSimetrica.computeIfAbsent(regiao, k -> new LinkedHashSet<>()).addAll(instancia.vizinhos.get(regiao));
-
             for (String vizinho : instancia.vizinhos.get(regiao)) {
                 vizinhancaSimetrica.computeIfAbsent(vizinho, k -> new LinkedHashSet<>()).add(regiao);
             }
@@ -129,25 +126,25 @@ public class MapColoringSolver {
                 Search.intVarSearch(seletorDeVariavel, seletorDeValorLCV, variaveisPorRegiao.values().toArray(new IntVar[0]))
         );
 
-        // 5) Execução da busca.
+        // 5) Execução da busca com todas as soluções.
         long inicio = System.nanoTime();
-        Solution solucao = modelo.getSolver().findSolution(); // Apenas uma solução.
-        long fim = System.nanoTime();
+        List<Map<String, String>> todasSolucoes = new ArrayList<>();
 
+        while (modelo.getSolver().solve()) {
+            Map<String, String> atribuicao = new LinkedHashMap<>();
+            for (String regiao : variaveisPorRegiao.keySet()) {
+                IntVar var = variaveisPorRegiao.get(regiao);
+                int indiceCor = var.getValue(); // variável está instanciada na solução corrente
+                String nomeCor = coresDisponiveisPorRegiao.get(regiao).get(indiceCor);
+                atribuicao.put(regiao, nomeCor);
+            }
+            todasSolucoes.add(atribuicao);
+        }
+
+        long fim = System.nanoTime();
         long falhas = modelo.getSolver().getMeasures().getFailCount();
         long tempoGastoMs = (fim - inicio) / 1_000_000L;
 
-        // Decodifica a solução (índices → nomes das cores).
-        Map<String, String> atribuicaoFinal = null;
-        if (solucao != null) {
-            atribuicaoFinal = new LinkedHashMap<>();
-            for (String regiao : variaveisPorRegiao.keySet()) {
-                int indiceCor = solucao.getIntVal(variaveisPorRegiao.get(regiao));
-                String nomeCor = coresDisponiveisPorRegiao.get(regiao).get(indiceCor);
-                atribuicaoFinal.put(regiao, nomeCor);
-            }
-        }
-
-        return new Result(atribuicaoFinal, tempoGastoMs, falhas);
+        return new Result(todasSolucoes, tempoGastoMs, falhas);
     }
 }
