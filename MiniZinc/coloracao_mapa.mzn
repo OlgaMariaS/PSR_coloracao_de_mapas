@@ -1,7 +1,7 @@
 % Algoritmo para o problema de coloração de mapas
 
 % Dominio das variáveis
-enum Cores = {Vermelho, Verde, Azul}; % Adicionar amarelo para instancias maiores
+enum Cores = {Vermelho, Verde, Azul, Amarelo}; % Adicionar amarelo para instancias maiores
 
 % Número de variáveis
 int: n;
