@@ -1,0 +1,14 @@
+# Pastas de cache do Python
+__pycache__/
+*.pyc
+
+# Pasta de resultados gerados
+resultados/
+
+# Ambientes virtuais (ex: venv)
+venv/
+*.env
+
+# Pastas de configuração de IDEs
+.vscode/
+.idea/
