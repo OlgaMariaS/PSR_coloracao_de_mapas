@@ -4,6 +4,12 @@ Este repositório contém a implementação de um resolvedor para o Problema de 
 
 O projeto utiliza o algoritmo de **Backtracking** com as heurísticas **Grau (Degree)** e **MRV (Minimum Remaining Values)**.
 
+## Ferramentas e Créditos
+
+A fim de aplicar testes e estudos iremos utilizar a biblioteca de código aberto `python-constraint` para a implementação do solver de PSR. A biblioteca é distribuída sob a licença LGPL v2.0.
+
+- **Repositório da Biblioteca:** [https://github.com/python-constraint/python-constraint](https://github.com/python-constraint/python-constraint)
+  
 ## Instalação
 
 Para instalar as dependências necessárias, execute o seguinte comando:
@@ -21,9 +27,3 @@ python main.py
 ```
 
 As imagens dos grafos coloridos serão salvas na pasta `/resultados`.
-
-## Ferramentas e Créditos
-
-Este projeto utiliza a biblioteca de código aberto `python-constraint` para a implementação do solver de PSR. A biblioteca é distribuída sob a licença LGPL v2.0.
-
-- **Repositório da Biblioteca:** [https://github.com/python-constraint/python-constraint](https://github.com/python-constraint/python-constraint)
